@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dasha Riabkova — Computational Design Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="grid-overlay" aria-hidden="true"></div>
+
+<header class="nav">
+  <nav>
+    <a href="#work">work</a>
+    <a href="#about">about</a>
+    <a href="#contact">contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">mathematics | computational design</p>
+    <h1>Hello!</h1>
+    <p class="hero-sub">I'm Dasha, a third-year mathematics student, who loves maths for its beauty, structure and complexity</p>
+    <div class="hero-actions">
+      <a href="#work" class="btn-primary">See the work</a>
+      <a href="mailto:riabkovadaria@gmail.com" class="btn-ghost">Contact me</a>
+    </div>
+  </div>
+  <div class="hero-plot">
+    <canvas id="curve" width="480" height="480"></canvas>
+    <p class="plot-caption">r(θ) = |cos(7θ/2)|^0.25</p>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="work">
+  <p class="section-label">work</p>
+
+  <article class="project">
+    <div class="project-plot" data-coord="(1, 1)">
+      <img src="images/1.png" alt="Comparison of ground state wavefunctions from Numerov and variational methods">
+
+    </div>
+    <div class="project-info">
+      <h2>Schrödinger Equation</h2>
+      <p class="project-meta">scientific computing · numerical analysis</p>
+      <p>Explores how computational algorithms can approximate complex mathematical systems through simulation. By comparing Variational and Numerov methods for the Schrödinger equation, the project visualizes wavefunctions, convergence, and the relationship between numerical methods and physical models.</p>
+      <a href="https://github.com/dasharepkowa/schrodinger_equation" class="project-link" target="_blank" rel="noopener">view code →</a>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-plot" data-coord="(2, 1)">
+      <img src="images/2.png" alt="Finite Difference vs Spectral Derivative">
+    </div>
+    <div class="project-info">
+      <h2>Spectral Methods and Signal Processing</h2>
+      <p class="project-meta">signal processing · Fourier analysis</p>
+      <p>The usage of Fast Fourier Transform to analyze, differentiate and translate signals numerically.The project visualizes wavepackets in both spatial and frequency domains while comparing spectral and finite-difference methods for accuracy and efficiency.</p>
+      <a href="https://github.com/dasharepkowa/Signal-Processing" class="project-link" target="_blank" rel="noopener">view code →</a>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-plot" data-coord="(3, 1)">
+      <img src="images/3.png" alt="Space-Time Diagram">
+    </div>
+    <div class="project-info">
+      <h2>Traffic Cellular Automata with Two Lanes</h2>
+      <p class="project-meta"> cellular automaton · stochastic modeling</p>
+      <p>Explores how simple local rules give rise to complex traffic dynamics using the Nagel–Schreckenberg cellular automaton. The project extends the classic single-lane model to a two-lane system and compares symmetric and asymmetric lane-changing strategies through traffic flow simulations and visualizations.</p>
+      <a href="https://github.com/dasharepkowa/traffic-cellular-automata" target="_blank" rel="noopener">view code →</a>
+    </div>
+  </article>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <p class="section-label">about</p>
+  <div class="about-grid">
+    <p class="about-text">
+      I'm currently exploring the intersection of mathematics and design. This website documents my projects, research and ideas.
+    </p>
+    <ul class="tool-list">
+  <li>
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+    Python
+  </li>
+  <li>
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+    SQL
+  </li>
+  <li>
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+    NumPy
+  </li>
+  <li>
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+    SciPy
+  </li>
+  <li>
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+    Pandas
+  </li>
+  <li>
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line></svg>
+    Stochastic Processes, Computational Modeling, Numerical Methods
+  </li>
+</ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<footer id="contact" class="contact">
+  <p class="section-label">contact</p>
+  <a href="mailto:riabkovadaria@gmail.com" class="contact-email">riabkovadaria@gmail.com</a>
+  <div class="contact-links">
+    <a href="https://github.com/dasharepkowa" target="_blank" rel="noopener">github</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
