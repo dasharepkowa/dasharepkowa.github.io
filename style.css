@@ -1,0 +1,302 @@
+:root {
+  --ink: #F2F3F6;
+  --paper: #EDE6D6;
+  --grid: #7D7FA3;
+  --text: #303166ff;;
+  --accent: #8B162B;
+  --serif: 'Spectral', serif;
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'Inter', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* faint grid overlay across whole page */
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.1;
+}
+
+/* NAV */
+.nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 6vw;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+.nav-mark { color: var(--accent); }
+
+.nav nav a {
+  margin-left: 28px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.nav nav a:hover { opacity: 1; color: var(--accent); }
+.nav nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+/* HERO */
+.hero {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 6vh 6vw 10vh;
+  min-height: 80vh;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1.05;
+  margin-bottom: 22px;
+}
+
+.hero-sub {
+  max-width: 480px;
+  font-size: 1.05rem;
+  opacity: 0.85;
+  margin-bottom: 32px;
+}
+
+.hero-actions { display: flex; gap: 16px; }
+
+.btn-primary, .btn-ghost {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  padding: 12px 22px;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--ink);
+  font-weight: 500;
+}
+.btn-primary:hover { background: #f4b85c; }
+
+.btn-ghost {
+  border: 1px solid var(--grid);
+  color: var(--text);
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+.btn-primary:focus-visible, .btn-ghost:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 3px;
+}
+
+.hero-plot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+
+#curve {
+  max-width: 100%;
+  filter: drop-shadow(0 0 24px rgba(232, 163, 61, 0.08));
+}
+
+.plot-caption {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  opacity: 0.5;
+  margin-top: 8px;
+}
+
+/* SECTION LABELS */
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 48px;
+  padding-left: 6vw;
+}
+
+/* WORK */
+.work {
+  position: relative;
+  z-index: 1;
+  padding: 10vh 0;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 6vh 6vw;
+  border-top: 1px solid var(--grid);
+}
+
+.project-plot { position: relative; }
+
+.project-plot::before {
+  content: attr(data-coord);
+  position: absolute;
+  top: -22px;
+  left: 0;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  opacity: 0.45;
+}
+
+.placeholder-art {
+  aspect-ratio: 4/3;
+  background: rgba(232, 163, 61, 0.06);
+  border: 1px dashed var(--grid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  opacity: 0.5;
+  border-radius: 2px;
+}
+.project-plot img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+  background: var(--paper);
+  border-radius: 2px;
+  display: block;
+}
+
+.project-info h2 {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.project-meta {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.project-info p:not(.project-meta) {
+  opacity: 0.85;
+  margin-bottom: 18px;
+  max-width: 460px;
+}
+
+.project-link {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.project-link:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ABOUT */
+.about {
+  position: relative;
+  z-index: 1;
+  padding: 10vh 0;
+  border-top: 1px solid var(--grid);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  padding: 0 6vw;
+}
+
+.about-text { font-size: 1.05rem; opacity: 0.85; max-width: 520px; }
+
+.tool-list li {
+  padding-bottom: 8px;
+  padding-left: 28px;
+  position: relative;
+  border-bottom: 1px solid var(--grid);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tool-list svg {
+  position: absolute;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  stroke: var(--accent);
+  flex-shrink: 0;
+}
+
+
+/* CONTACT */
+.contact {
+  position: relative;
+  z-index: 1;
+  padding: 10vh 0 6vh;
+  border-top: 1px solid var(--grid);
+}
+
+.contact-email {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 3.2vw, 2.4rem);
+  display: inline-block;
+  margin-bottom: 24px;
+  margin-left: 6vw;
+  border-bottom: 1px solid var(--accent);
+  word-break: break-word;
+  max-width: 90vw;
+}
+.contact-email:hover { color: var(--accent); }
+
+.contact-links { display: flex; gap: 24px; font-family: var(--mono); margin-left: 6vw; font-size: 0.85rem; opacity: 0.8; }
+.contact-links a:hover { color: var(--accent); }
+
+/* RESPONSIVE */
+@media (max-width: 880px) {
+  .hero { grid-template-columns: 1fr; padding-top: 4vh; }
+  .hero-plot { order: -1; margin-bottom: 24px; }
+  .project { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+  .nav nav a { margin-left: 16px; }
+}
